@@ -32,7 +32,7 @@ exports.isAuth = async (req, res, next) => {
 
 exports.userMiddleware= (req, res, next)=>{
   try {
-    if(req.user.role !== "user"){
+    if(req.user.role !== "student"){
       return res
       .status(401)
       .send({ errors: [{ msg: "access denied" }] });
@@ -56,3 +56,16 @@ try {
   res.status(401).send({ errors: [{ msg: "you are not authorized" }] });
 }
 };
+exports.teacherMiddleware= (req, res, next)=>{
+  try {
+    if(req.user.role !== "teacher"){
+      return res
+      .status(401)
+      .send({ errors: [{ msg: "access denied" }] });
+    }
+    next()
+  } catch (error) {
+    console.log(error)
+    res.status(401).send({ errors: [{ msg: "you are not authorized" }] });
+  }
+  };

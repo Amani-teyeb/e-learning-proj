@@ -11,7 +11,7 @@ app.use(express.json());
 // creer le middlew ware de express 
 app.use("/api/user", require("./router/user"));
 
-
+app.use("/api/teacher", require("./router/teacher"));
 
 
 

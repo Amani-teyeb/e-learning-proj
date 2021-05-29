@@ -13,7 +13,7 @@ const userSchema= new Schema({
       enum: ["student", "admin", "teacher"],
       default: "student",
     },
-    profiePicture: {type: String},
+    
 
     },{timestamps: true,});
     
