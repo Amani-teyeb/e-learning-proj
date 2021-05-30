@@ -13,6 +13,7 @@ app.use("/api/user", require("./router/user"));
 
 app.use("/api/teacher", require("./router/teacher"));
 
+app.use("/api/course", require("./router/courses"));
 
 
 // port
